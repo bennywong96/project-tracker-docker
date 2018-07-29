@@ -1,0 +1,19 @@
+<div class="panel panel-default" ng-controller="infoController as infoCtrl">
+	<div class="panel-heading">User Information</div>
+	<div class="panel-body">
+			<h3><span>User Table</span></h3>
+			<table class="table">
+				<tr>
+					<th>{{'id' | uppercase}}</th>
+					<th>{{'Name' | uppercase}}</th>
+					<th>{{'Score' | uppercase}}</th>
+				</tr>
+				<tr >
+					<td>{{infoCtrl.user.userId}}</td>
+					<td>{{infoCtrl.user.userName}}</td>
+					<td><span ng-repeat="skills in infoCtrl.user.skills" >{{skills.skillName}} </span></td>
+				</tr>
+			</table>
+	</div>
+</div>
+

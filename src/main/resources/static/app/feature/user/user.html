@@ -1,0 +1,19 @@
+<div class="panel panel-default" ng-controller="userController as userCtrl">
+	<div class="panel-heading">Available Users</div>
+	<div class="panel-body">
+		<div ng-hide="userCtrl.isHidden">
+			<h3><span>User Table</span></h3>
+			<table class="table">
+				<tr>
+					<th>{{'id' | uppercase}}</th>
+					<th>{{'name' | uppercase}}</th>
+				</tr>
+				<tr ng-repeat="user in userCtrl.users">
+					<td>{{user.userId}}</td>
+					<td ng-click="userCtrl.changeState(user.userId)"><button>{{user.userName}}</button></td>
+				</tr>
+			</table>
+		</div>
+		<button class="btn"ng-click="userCtrl.hideTable()">{{userCtrl.accountString}}</button>
+	</div>
+</div>
