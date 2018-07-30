@@ -5,31 +5,31 @@ import java.util.LinkedList;
 import java.util.List;
 
 @Entity
-public class Trainer{
+public class User{
 	
 	@Column
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Id
-	private Integer trainerId;
+	private Integer userId;
     @Column
-    private String trainerName;
+    private String userName;
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Skill> skills= new LinkedList<>();
 
-    public Integer getTrainerId() {
-        return trainerId;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setTrainerId(Integer trainerId) {
-        this.trainerId = trainerId;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
-    public String getTrainerName() {
-        return trainerName;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setTrainerName(String trainerName) {
-        this.trainerName = trainerName;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public List<Skill> getSkills() {
@@ -40,11 +40,11 @@ public class Trainer{
         this.skills = skills;
     }
 
-    public Trainer() {
+    public User() {
     }
 
-    public Trainer(String trainerName, List<Skill> skills) {
-        this.trainerName = trainerName;
+    public User(String userName, List<Skill> skills) {
+        this.userName = userName;
         this.skills = skills;
     }
 }

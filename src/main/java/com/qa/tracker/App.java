@@ -3,9 +3,9 @@ package com.qa.tracker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import com.qa.tracker.persistence.TrainerRepository;
+import com.qa.tracker.persistence.UserRepository;
 import com.qa.tracker.persistence.domain.Skill;
-import com.qa.tracker.persistence.domain.Trainer;
+import com.qa.tracker.persistence.domain.User;
 import javax.annotation.PostConstruct;
 import java.util.Arrays;
 
@@ -13,7 +13,7 @@ import java.util.Arrays;
 public class App {
 	
 	@Autowired
-	private TrainerRepository trainerRepository;
+	private UserRepository userRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(App.class, args);
@@ -21,8 +21,8 @@ public class App {
 
 	@PostConstruct
 	public void setupDbWithData(){
-		Trainer trainer= new Trainer("John Gordon", null);
-		trainer.setSkills(Arrays.asList(new Skill("JavaEE"), new Skill("DB")));
-		trainer= trainerRepository.save(trainer);
+		User user= new User("First User", null);
+		user.setSkills(Arrays.asList(new Skill("JavaEE"), new Skill("DB")));
+		user= userRepository.save(user);
 	}
 }

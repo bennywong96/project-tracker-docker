@@ -12,7 +12,7 @@ public class Skill {
     @Column
     private String skillName;
     @ManyToOne
-    private Trainer trainer;
+    private User user;
 
     public Skill(String skillName) {
 		this.skillName = skillName;
@@ -34,19 +34,19 @@ public class Skill {
         this.skillName = skillName;
     }
 
-    public Trainer getTrainer() {
-        return trainer;
+    public User getUser() {
+        return user;
     }
 
-    public void setTrainer(Trainer trainer) {
-        this.trainer = trainer;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public Skill() {
     }
 
-    public Skill(String skillName, Trainer trainer) {
+    public Skill(String skillName, User user) {
         this.skillName = skillName;
-        this.trainer = trainer;
+        this.user = user;
     }
 }
